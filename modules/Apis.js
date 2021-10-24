@@ -1,5 +1,5 @@
-const apiConnection = require('../nodeConnection')
-const dbConnection = require('../dbConnection')
+const apiConnection = require('./nodeConnection')
+const dbConnection = require('./dbConnection')
 
 const connectApi = apiConnection.getNodeConnection().then((api) => {
     return api;
