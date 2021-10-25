@@ -27,7 +27,7 @@ router.get('/api/node/blocks/num/:num', async function (ctx){
 });
 
 router.post('/api/node/blocks/hash', async function (ctx){
-    console.log(this.req);
+    console.log(ctx.req.body);
     const res = await apis.getBlockByHash(ctx);
     ctx.body = res;
     
