@@ -19,7 +19,7 @@
   "dependencies": {
     "@polkadot/api": "^6.4.2",
     "koa": "^2.13.4",
-    "koa-better-body": "^3.3.9",
+    
     "koa-router": "^10.1.1",
     "pg": "^8.7.1",
     "websocket": "^1.0.34"
