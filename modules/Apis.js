@@ -23,8 +23,8 @@ const connectApi = apiConnection.getNodeConnection().then((api) => {
         }
         
         exports.getBlockByHash = async (ctx) => {
-            
-            const hash = ctx.request.body.hash;
+            console.log(ctx.hash);
+            const hash = ctx.hash;
             return await connectApi.then(api => api.rpc.chain.getBlock(hash));
         }
         
