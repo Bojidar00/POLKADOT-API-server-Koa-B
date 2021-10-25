@@ -4,11 +4,15 @@ var router = Router();
 
 
 
-
+router.get('/', async function (ctx){
+    
+    ctx.body = "Hello world!";
+    
+});
 
 router.get('/api/node/blocks', async function (ctx){
-    
-    ctx.body = apis.LastBlock();
+    const res = await apis.LastBlock();
+    ctx.body = res;
     
 });
 

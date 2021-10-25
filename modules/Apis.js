@@ -10,8 +10,8 @@ const connectApi = apiConnection.getNodeConnection().then((api) => {
 });  
        exports.LastBlock= async (ctx) => {
            
-               var response = await connectApi.then(api => api.rpc.chain.getBlock());
-               return response;
+               
+               return await connectApi.then(api => api.rpc.chain.getBlock());
           
         }
 
