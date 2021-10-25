@@ -17,67 +17,68 @@ router.get('/api/node/blocks', async function (ctx){
 });
 
 router.get('/api/node/blocks/num/:num', async function (ctx){
-    //const result =  await accountController.getAccountsCount(ctx);
-    ctx.body = "response"+ctx.params.num;
+    
+    const res = await apis.getBlockHashByNumber(ctx);
+    ctx.body = res;
     
 });
 
 router.post('/api/node/blocks/hash', async function (ctx){
-    //const result =  await accountController.getAccountsCount(ctx);
-    ctx.body = "response";
+    const res = await apis.getBlockByHash(ctx);
+    ctx.body = res;
     
 });
 
 router.get('/api/node/blocks/{x}/{n}', async function (ctx){
-    //const result =  await accountController.getAccountsCount(ctx);
-    ctx.body = "response";
+    const res = await apis.getXBlocksAfterN(ctx);
+    ctx.body = res;
     
 });
 
 router.get('/api/node/accounts/count/', async function (ctx){
-    //const result =  await accountController.getAccountsCount(ctx);
-    ctx.body = "response";
+    const res = await apis.getAccountsCount(ctx);
+    ctx.body = res;
     
 });
 
 router.get('/api/node/address/transactions/count/:address', async function (ctx){
-    //const result =  await accountController.getAccountsCount(ctx);
-    ctx.body = "response";
+    const res =await apis.getAccountTransactionsCount(ctx);
+    ctx.body = res;
     
 });
 
 router.get('/api/node/address/transactions/:address', async function (ctx){
-    //const result =  await accountController.getAccountsCount(ctx);
-    ctx.body = "response";
+    const res = await apis.getAccountTransactions(ctx);
+    ctx.body = res;
     
 });
 
 router.get('/api/node/address/balance/:address', async function (ctx){
-    //const result =  await accountController.getAccountsCount(ctx);
-    ctx.body = "response";
+    const res = await apis.getAccountBalance(ctx);
+    ctx.body = res;
     
 });
 
 router.get('/api/node/transactions/:x/:n', async function (ctx){
-    //const result =  await accountController.getAccountsCount(ctx);
-    ctx.body = "response";
+    const res = await apis.getXTransactionsAfterNth(ctx);
+    ctx.body = res;
     
 });
 
 router.get('/api/node/transactions/count', async function (ctx){
-    //const result =  await accountController.getAccountsCount(ctx);
-    ctx.body = "response";
+    const res = await apis.getTransactionsCount(ctx);
+    ctx.body = res;
     
 });
 
-router.get('/api/node/transactions/block', async function (ctx){
-    //const result =  await accountController.getAccountsCount(ctx);
-    ctx.body = "response";
+router.post('/api/node/transactions/block', async function (ctx){
+    const res = await apis.getTransactionsFromBlock(ctx);
+    ctx.body = res;
     
 });
 
-router.get('/api/node/transactions/hash', async function (ctx){
-    //const result =  await accountController.getAccountsCount(ctx);
+router.post('/api/node/transactions/hash', async function (ctx){
+    const res = await apis.getTransactionByHash(ctx);
     ctx.body = "response";
     
 });

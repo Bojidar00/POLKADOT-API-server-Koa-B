@@ -19,13 +19,13 @@ const connectApi = apiConnection.getNodeConnection().then((api) => {
 
         exports.getBlockHashByNumber = async (ctx) => {
             const number = ctx.params.number;
-            return connectApi.then(api => api.rpc.chain.getBlockHash(number));
+            return await connectApi.then(api => api.rpc.chain.getBlockHash(number));
         }
         
         exports.getBlockByHash = async (ctx) => {
-            const payload = ctx.payload;
-            const hash = payload.hash;
-            return connectApi.then(api => api.rpc.chain.getBlock(hash));
+            
+            const hash = ctx.request.body.hash;
+            return await connectApi.then(api => api.rpc.chain.getBlock(hash));
         }
         
         exports.getXBlocksAfterN = async (ctx) => {
@@ -84,7 +84,7 @@ const connectApi = apiConnection.getNodeConnection().then((api) => {
         }
         
         exports.getTransactionsFromBlock = async (ctx) => {
-            const hash = ctx.params.hash;
+            const hash = ctx.request.body.hash;
 
             
             const result = await connectDb.query(`SELECT * FROM transactions WHERE block_hash='${hash}'`);
@@ -92,7 +92,7 @@ const connectApi = apiConnection.getNodeConnection().then((api) => {
         }
         
         exports.getTransactionByHash = async (ctx) => {
-            const hash = ctx.params.hash;
+            const hash = ctx.request.body.hash;
           
             const result = await connectDb.query(`SELECT * FROM transactions WHERE hash='${hash}'`);
             return result?.rows;
