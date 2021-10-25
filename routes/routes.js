@@ -34,7 +34,7 @@ router.post('/api/node/blocks/hash',body(), async function (ctx){
     
 });
 
-router.get('/api/node/blocks/{x}/{n}', async function (ctx){
+router.get('/api/node/blocks/:x:/:n', async function (ctx){
     const res = await apis.getXBlocksAfterN(ctx);
     ctx.body = res;
     
