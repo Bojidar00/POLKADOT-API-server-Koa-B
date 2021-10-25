@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Bojidar00/POLKADOT-API-server-Koa-B#readme",
   "dependencies": {
+    "@polkadot/api": "^6.4.2",
     "koa": "^2.13.4",
     "koa-router": "^10.1.1"
   }
