@@ -3,5 +3,5 @@ const app = new Koa();
 const router = require('./routes/routes')
 
 app.use(router.routes());
-require('./websockets');
+require('./modules/websocket');
 app.listen(8080);
