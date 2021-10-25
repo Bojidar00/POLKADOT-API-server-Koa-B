@@ -1,6 +1,6 @@
 const Router = require('koa-router');
 const apis = require('../modules/Apis');
-var body = require('koa-better-body');
+
 var router = Router();
 
 
@@ -26,9 +26,8 @@ router.get('/api/node/blocks/num/:num', async function (ctx){
     
 });
 
-router.post('/api/node/blocks/hash',body(), async function (ctx){
-    console.log(ctx.request.files);
-    console.log(ctx.request.fields);
+router.post('/api/node/blocks/hash', async function (ctx){
+    
     const res = await apis.getBlockByHash(ctx.request.files);
     ctx.body = res;
     
