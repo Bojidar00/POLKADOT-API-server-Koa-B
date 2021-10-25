@@ -1,6 +1,6 @@
 const Router = require('koa-router');
 const apis = require('../modules/Apis');
-const koaBody = require('../node_modules/koa-body/index')({multipart:true});
+const koaBody = require('koa-body')({multipart:true});
 var router = Router();
 
 
